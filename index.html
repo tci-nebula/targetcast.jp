@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>株式会社ターゲットキャスト | TargetCast KK</title>
+<meta name="description" content="株式会社ターゲットキャストは、テクノロジー企業の日本市場参入を専門とする東京のコンサルティング会社です。TargetCast KK is a Tokyo consultancy specialising in Japan market entry for technology companies.">
+<meta property="og:title" content="株式会社ターゲットキャスト | TargetCast KK">
+<meta property="og:description" content="テクノロジー企業の日本市場参入を専門とするコンサルティング。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://targetcast.jp">
+<meta name="color-scheme" content="light only">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ground:#EFF1F0;        /* cool paper, not cream */
+    --panel:#F7F8F8;
+    --ink:#16191A;
+    --ink-soft:#4A5250;
+    --rule:#CDD3D1;
+    --pine:#14514A;          /* signature accent — deep pine */
+    --gold:#B08928;          /* used exactly twice */
+    --maxw:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none!important;transition:none!important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
+
+  a{color:var(--pine);text-decoration:none;border-bottom:1px solid var(--rule);}
+  a:hover{border-bottom-color:var(--pine);}
+  a:focus-visible{outline:2px solid var(--pine);outline-offset:3px;}
+
+  /* ── signature: the bilingual lockup ───────────────────────
+     Every heading is a JA/EN pair joined by a vertical rule.
+     The company works between two languages; the headings say so. */
+  .lockup{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0 20px;
+    align-items:start;
+    margin:0 0 44px;
+  }
+  .lockup::before{
+    content:"";
+    grid-row:1 / 3;
+    width:1px;
+    align-self:stretch;
+    background:linear-gradient(to bottom,var(--pine) 0%,var(--pine) 38%,var(--rule) 38%,var(--rule) 100%);
+  }
+  .lockup .ja{
+    grid-column:2;
+    font-family:"Shippori Mincho B1",serif;
+    font-weight:600;
+    font-size:clamp(21px,2.4vw,27px);
+    line-height:1.35;
+    letter-spacing:.06em;
+    margin:0;
+  }
+  .lockup .en{
+    grid-column:2;
+    font-family:"Roboto Mono",monospace;
+    font-weight:400;
+    font-size:11px;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:6px 0 0;
+  }
+
+  /* ── header ─────────────────────────────────────────────── */
+  header{
+    border-bottom:1px solid var(--rule);
+    background:var(--ground);
+    position:sticky;top:0;z-index:10;
+  }
+  .bar{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:24px;padding:20px 0;flex-wrap:wrap;
+  }
+  .mark{
+    font-family:"Shippori Mincho B1",serif;
+    font-weight:700;font-size:19px;letter-spacing:.10em;
+    border-bottom:none;color:var(--ink);
+  }
+  .mark span{
+    display:block;font-family:"Roboto Mono",monospace;font-weight:400;
+    font-size:9.5px;letter-spacing:.30em;color:var(--ink-soft);
+    text-transform:uppercase;margin-top:3px;
+  }
+  nav{display:flex;gap:26px;flex-wrap:wrap;}
+  nav a{
+    font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-soft);border-bottom:none;
+  }
+  nav a:hover{color:var(--pine);}
+
+  /* ── hero ───────────────────────────────────────────────── */
+  .hero{padding:clamp(80px,13vw,168px) 0 clamp(64px,9vw,110px);}
+  .hero-eyebrow{
+    font-family:"Roboto Mono",monospace;font-size:11px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--pine);margin:0 0 34px;
+  }
+  .hero h1{
+    font-family:"Shippori Mincho B1",serif;
+    font-weight:700;
+    font-size:clamp(38px,6.6vw,84px);
+    line-height:1.18;
+    letter-spacing:.02em;
+    margin:0 0 26px;
+    max-width:15em;
+  }
+  .hero h1 em{font-style:normal;color:var(--pine);}
+  .hero-en{
+    font-family:"Roboto Mono",monospace;
+    font-size:clamp(11px,1.3vw,13px);
+    letter-spacing:.20em;text-transform:uppercase;
+    color:var(--ink-soft);margin:0 0 40px;
+  }
+  .hero-lede{
+    font-size:clamp(15px,1.6vw,18px);
+    max-width:44em;margin:0;color:var(--ink);
+  }
+
+  /* the two markets, stated as a fact not a graphic */
+  .axis{
+    display:flex;align-items:center;gap:18px;
+    margin-top:56px;padding-top:26px;
+    border-top:1px solid var(--rule);
+    font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.20em;text-transform:uppercase;color:var(--ink-soft);
+    flex-wrap:wrap;
+  }
+  .axis b{color:var(--ink);font-weight:400;}
+  .axis .dash{flex:1;min-width:40px;height:1px;background:var(--rule);}
+
+  /* ── sections ───────────────────────────────────────────── */
+  section{padding:clamp(56px,8vw,96px) 0;border-top:1px solid var(--rule);}
+  .prose p{max-width:44em;margin:0 0 22px;}
+  .prose p:last-child{margin-bottom:0;}
+
+  /* ── company data table ─────────────────────────────────── */
+  .data{width:100%;border-collapse:collapse;max-width:900px;}
+  .data th,.data td{
+    text-align:left;vertical-align:top;
+    padding:20px 0;border-bottom:1px solid var(--rule);
+  }
+  .data th{
+    width:200px;font-weight:400;
+    font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+    padding-right:28px;white-space:nowrap;
+  }
+  .data td{font-size:15.5px;}
+  .data .num{font-family:"Roboto Mono",monospace;font-size:14px;letter-spacing:.02em;}
+  .data td small{
+    display:block;color:var(--ink-soft);font-size:12.5px;
+    letter-spacing:.04em;margin-top:2px;
+  }
+
+  /* ── contact ────────────────────────────────────────────── */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  label{
+    display:block;font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
+    margin:0 0 8px;
+  }
+  input,textarea{
+    width:100%;background:var(--panel);color:var(--ink);
+    border:1px solid var(--rule);border-radius:0;
+    padding:13px 14px;font-family:inherit;font-size:15px;font-weight:300;
+    margin-bottom:24px;
+  }
+  input:focus,textarea:focus{outline:2px solid var(--pine);outline-offset:-1px;border-color:var(--pine);}
+  textarea{min-height:150px;resize:vertical;line-height:1.7;}
+  button{
+    background:var(--pine);color:#fff;border:none;border-radius:0;
+    padding:15px 40px;cursor:pointer;
+    font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.22em;text-transform:uppercase;
+  }
+  button:hover{background:#0E3E39;}
+  button:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  .form-status{
+    margin:0;min-height:1.5em;
+    font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;
+  }
+  .form-status.ok{color:var(--pine);}
+  .form-status.err{color:#9A3226;}
+  button[disabled]{opacity:.5;cursor:default;}
+
+  /* ── footer ─────────────────────────────────────────────── */
+  footer{
+    border-top:1px solid var(--rule);padding:44px 0 60px;
+    font-family:"Roboto Mono",monospace;font-size:11px;
+    letter-spacing:.14em;color:var(--ink-soft);
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  }
+  footer .seal{
+    width:9px;height:9px;background:var(--gold);
+    display:inline-block;margin-right:10px;vertical-align:1px;
+  }
+
+  @media (max-width:760px){
+    .wrap{padding:0 22px;}
+    .contact-grid{grid-template-columns:1fr;gap:40px;}
+    .data th{width:auto;display:block;padding-bottom:2px;border-bottom:none;}
+    .data td{display:block;padding-top:0;}
+    .data tr{display:block;border-bottom:1px solid var(--rule);padding:16px 0;}
+    .data th,.data td{border-bottom:none;padding-top:0;padding-bottom:0;}
+    nav{gap:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="mark" href="#top">株式会社ターゲットキャスト<span>TargetCast KK</span></a>
+    <nav>
+      <a href="#about">会社概要</a>
+      <a href="#business">事業内容</a>
+      <a href="#info">会社情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── HERO ───────────────────────────────────────────── -->
+  <div class="wrap hero">
+    <p class="hero-eyebrow">Tokyo, Japan — established 2009</p>
+    <h1><em>テクノロジー企業</em>の日本参入を、設計する。</h1>
+    <p class="hero-en">Japan market entry for technology companies</p>
+    <p class="hero-lede">
+      株式会社ターゲットキャストは、テクノロジー企業の日本市場参入を専門とする
+      東京・西池袋のコンサルティング会社です。戦略の立案から、パートナー開拓、
+      販路構築、現地での実行までを一貫して担います。
+    </p>
+
+    <div class="axis">
+      <span>Strategy</span><span class="dash"></span><span>Partners</span><span class="dash"></span><span>Channels</span><span class="dash"></span><span>Execution</span>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ──────────────────────────────────────────── -->
+  <section id="about">
+    <div class="wrap">
+      <div class="lockup">
+        <p class="ja">会社概要</p>
+        <p class="en">About</p>
+      </div>
+      <div class="prose">
+        <!-- TODO(nick): replace these two paragraphs with the description you want public. -->
+        <p>
+          2009年の設立以来、当社はテクノロジー企業の日本市場参入を支援してきました。
+          日本市場の難しさは、参入そのものよりも、
+          何を先に決めるべきかが分かりにくいことにあります。
+          当社は、その順序を設計するところから関わります。
+        </p>
+        <p>
+          支援は調査や提案にとどまりません。
+          パートナー候補の選定と交渉、販売チャネルの構築、現地での運営まで、
+          実行段階を伴走します。海外の技術企業にとって、
+          日本での最初の一年を誰と進めるかが、その後の数年を決めます。
+          代表は東京を拠点に20年以上、日本と北米の双方で事業を手がけてきました。
+        </p>
+        <p>
+          関連会社として、カナダ・トロントに TargetCast, Inc. を有しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BUSINESS ───────────────────────────────────────── -->
+  <section id="business">
+    <div class="wrap">
+      <div class="lockup">
+        <p class="ja">事業内容</p>
+        <p class="en">What we do</p>
+      </div>
+      <table class="data">
+        <tbody>
+          <tr>
+            <th>市場参入戦略</th>
+            <td>日本市場での需要評価、参入方式の選定、価格・体制・時期の設計。
+              <small>Market assessment and entry strategy</small></td>
+          </tr>
+          <tr>
+            <th>パートナー開拓</th>
+            <td>販売代理店、技術提携先、リセラーの選定と紹介、条件交渉の支援。
+              <small>Reseller, distributor and technology partner development</small></td>
+          </tr>
+          <tr>
+            <th>販路構築</th>
+            <td>直販・チャネル販売の立ち上げと、その後の運用支援。日本語での顧客対応体制の設計。
+              <small>Direct and channel sales, and the local operations behind them</small></td>
+          </tr>
+          <tr>
+            <th>製品開発</th>
+            <td>自社製品の企画・設計・権利化。アクセシビリティ製品「Paper Flow®」を開発中。
+              <small>In-house product development — patent 特願2025-138668, trademark 商標登録第7021652号</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── COMPANY INFO ───────────────────────────────────── -->
+  <section id="info">
+    <div class="wrap">
+      <div class="lockup">
+        <p class="ja">会社情報</p>
+        <p class="en">Company information</p>
+      </div>
+      <table class="data">
+        <tbody>
+          <tr><th>会社名</th><td>株式会社ターゲットキャスト<small>TargetCast KK</small></td></tr>
+          <tr><th>代表取締役</th><td>コバック・ニコラス<small>Nicholas Kovac</small></td></tr>
+          <tr><th>設立</th><td>2009年7月23日<small>平成21年7月23日</small></td></tr>
+          <tr><th>資本金</th><td class="num">4,010,000円</td></tr>
+          <tr><th>所在地</th><td>〒171-0021<br>東京都豊島区西池袋2-29-18 ジェムスターハウス3F<small>Gemstar House 3F, 2-29-18 Nishi-Ikebukuro, Toshima-ku, Tokyo 171-0021</small></td></tr>
+          <tr><th>電話</th><td class="num">03-6277-8352</td></tr>
+          <tr><th>法人番号</th><td class="num">6010001130533</td></tr>
+          <tr><th>関連会社</th><td>TargetCast, Inc.<small>Toronto, Canada</small></td></tr>
+          <tr><th>Facebook</th><td><a href="https://www.facebook.com/targetcast" rel="me noopener">facebook.com/targetcast</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────── -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="lockup">
+        <p class="ja">お問い合わせ</p>
+        <p class="en">Contact</p>
+      </div>
+      <div class="contact-grid">
+        <div class="prose">
+          <p>事業のご相談、製品に関するお問い合わせは、フォームまたはメールにてご連絡ください。日本語・英語どちらでも承ります。</p>
+          <p>Enquiries in Japanese or English are both welcome.</p>
+        </div>
+        <form id="enquiry" novalidate>
+          <label for="name">お名前 / Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="company">会社名 / Company</label>
+          <input id="company" name="company" type="text" autocomplete="organization">
+
+          <label for="email">メールアドレス / Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="message">お問い合わせ内容 / Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <!-- bot trap: real people never fill this -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" id="send">送信 / Send</button>
+          <p class="form-status" id="status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div><span class="seal"></span>株式会社ターゲットキャスト</div>
+  <div>&copy; 2026 TargetCast KK</div>
+</footer>
+
+<script>
+(function () {
+  // Endpoint that relays to Rocket.Chat. Point this at a small proxy (a Cloudflare
+  // Worker holding the incoming-webhook URL as a secret) rather than at the
+  // Rocket.Chat webhook itself — anything in this file is public.
+  var ENDPOINT = "https://forms.targetcast.jp/enquiry";
+
+  var form = document.getElementById("enquiry");
+  var btn = document.getElementById("send");
+  var status = document.getElementById("status");
+  if (!form) return;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    status.className = "form-status";
+    status.textContent = "";
+
+    if (form.website.value) return;               // bot
+    if (!form.checkValidity()) {
+      status.className = "form-status err";
+      status.textContent = "未入力の項目があります / Some fields are missing";
+      form.reportValidity();
+      return;
+    }
+
+    btn.disabled = true;
+    status.textContent = "送信中 / Sending…";
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name.value.trim(),
+        company: form.company.value.trim(),
+        email: form.email.value.trim(),
+        message: form.message.value.trim(),
+        source: "targetcast.jp",
+        sentAt: new Date().toISOString()
+      })
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        form.reset();
+        status.className = "form-status ok";
+        status.textContent = "送信しました。折り返しご連絡します / Sent — we'll be in touch";
+      })
+      .catch(function () {
+        status.className = "form-status err";
+        status.textContent = "送信できませんでした。Facebook からご連絡ください / Couldn't send — please reach us on Facebook";
+      })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
+</script>
+
+</body>
+</html>
