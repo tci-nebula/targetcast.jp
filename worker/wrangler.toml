@@ -2,6 +2,10 @@ name = "targetcast-enquiry-relay"
 main = "enquiry-relay.js"
 compatibility_date = "2026-08-28"
 
+[vars]
+# Enquiries post here. Must NOT be the MAN.W channel.
+CHANNEL = "#targetcast"
+
 routes = [
   { pattern = "forms.targetcast.jp/enquiry", custom_domain = true }
 ]
@@ -12,5 +16,6 @@ routes = [
 # binding = "RATE"
 # id = "<paste-namespace-id>"
 
-# Secret (never commit it):
+# Secret (never commit it). Use the incoming webhook created against #targetcast,
+# not the MAN.W one:
 #   wrangler secret put ROCKETCHAT_WEBHOOK

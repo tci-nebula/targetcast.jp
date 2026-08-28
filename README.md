@@ -48,9 +48,16 @@ The form posts JSON to `ENDPOINT` in `index.html`, currently
 `index.html` is public, so the webhook URL would be too, and anyone could post into the
 channel. The Worker keeps it as a secret.
 
+In Rocket.Chat, create a **new** incoming webhook integration bound to `#targetcast`.
+Do not reuse the MAN.W integration — enquiries for the two companies should never share
+a channel, and the webhook binding is what decides where a message lands.
+
     cd worker
-    wrangler secret put ROCKETCHAT_WEBHOOK    # paste the Rocket.Chat incoming webhook URL
+    wrangler secret put ROCKETCHAT_WEBHOOK    # the #targetcast incoming webhook URL
     wrangler deploy
+
+The Worker also sets `channel` in the payload (`CHANNEL` in `wrangler.toml`, default
+`#targetcast`) as a second guard, in case the integration is ever re-pointed.
 
 The Worker checks Origin, validates and truncates fields, drops honeypot submissions,
 and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml`).
@@ -60,7 +67,7 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 - [ ] 会社概要 copy — drafted from a one-line brief; read it and adjust the voice
 - [ ] The form is now the **only** way to reach the company — no phone, no email, no
       social. Test a real submission end to end after deploying the Worker, and check
-      the Rocket.Chat channel is one someone actually watches.
+      it arrives in #targetcast — not the MAN.W channel — and that someone watches it.
 - [ ] Rocket.Chat webhook set as a Worker secret, Worker deployed
 - [ ] `forms.targetcast.jp` DNS record pointing at the Worker
 - [ ] Decide whether Paper Flow stays on the public site
