@@ -344,10 +344,8 @@
           <tr><th>設立</th><td>2009年7月23日<small>平成21年7月23日</small></td></tr>
           <tr><th>資本金</th><td class="num">4,010,000円</td></tr>
           <tr><th>所在地</th><td>〒171-0021<br>東京都豊島区西池袋2-29-18 ジェムスターハウス3F<small>Gemstar House 3F, 2-29-18 Nishi-Ikebukuro, Toshima-ku, Tokyo 171-0021</small></td></tr>
-          <tr><th>電話</th><td class="num">03-6277-8352</td></tr>
           <tr><th>法人番号</th><td class="num">6010001130533</td></tr>
           <tr><th>関連会社</th><td>TargetCast, Inc.<small>Toronto, Canada</small></td></tr>
-          <tr><th>Facebook</th><td><a href="https://www.facebook.com/targetcast" rel="me noopener">facebook.com/targetcast</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -362,8 +360,11 @@
       </div>
       <div class="contact-grid">
         <div class="prose">
-          <p>事業のご相談、製品に関するお問い合わせは、フォームまたはメールにてご連絡ください。日本語・英語どちらでも承ります。</p>
-          <p>Enquiries in Japanese or English are both welcome.</p>
+          <p>日本市場参入のご相談は、右のフォームよりご連絡ください。
+             内容を確認のうえ、担当者より折り返しご連絡いたします。
+             日本語・英語どちらでも承ります。</p>
+          <p>Tell us what you're bringing to Japan and where you are with it.
+             We reply in Japanese or English.</p>
         </div>
         <form id="enquiry" novalidate>
           <label for="name">お名前 / Name</label>
@@ -446,7 +447,7 @@
       })
       .catch(function () {
         status.className = "form-status err";
-        status.textContent = "送信できませんでした。Facebook からご連絡ください / Couldn't send — please reach us on Facebook";
+        status.textContent = "送信できませんでした。時間をおいて再度お試しください / Couldn't send — please try again shortly";
       })
       .finally(function () { btn.disabled = false; });
   });

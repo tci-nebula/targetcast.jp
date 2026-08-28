@@ -58,6 +58,9 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 ## Before going live
 
 - [ ] 会社概要 copy — drafted from a one-line brief; read it and adjust the voice
+- [ ] The form is now the **only** way to reach the company — no phone, no email, no
+      social. Test a real submission end to end after deploying the Worker, and check
+      the Rocket.Chat channel is one someone actually watches.
 - [ ] Rocket.Chat webhook set as a Worker secret, Worker deployed
 - [ ] `forms.targetcast.jp` DNS record pointing at the Worker
 - [ ] Decide whether Paper Flow stays on the public site
