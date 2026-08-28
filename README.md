@@ -6,11 +6,16 @@ consulting for technology companies. Static, single page, no build step —
 
 ## Publishing (GitHub Pages)
 
-1. Create a repo and push these files to `main`.
-2. Settings → Pages → Source: **Deploy from a branch** → `main` / `/ (root)`.
-3. Settings → Pages → Custom domain: `targetcast.jp` → Save.
+This folder is already a git repo with one commit on `main`. Add your remote and push:
+
+    git remote add origin git@github.com:<account>/targetcast.jp.git
+    git push -u origin main
+
+Then:
+1. Settings → Pages → Source: **Deploy from a branch** → `main` / `/ (root)`.
+2. Settings → Pages → Custom domain: `targetcast.jp` → Save.
    (`CNAME` in this repo already holds the domain.)
-4. Tick **Enforce HTTPS** once the certificate is issued.
+3. Tick **Enforce HTTPS** once the certificate is issued.
 
 ## DNS
 
@@ -61,6 +66,7 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 
 ## Files
 
+    .gitignore                 keeps .dev.vars / .wrangler out of the repo
     index.html                 the site
     404.html                   not-found page
     worker/enquiry-relay.js    Cloudflare Worker — form → Rocket.Chat
