@@ -65,6 +65,8 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 ## Before going live
 
 - [ ] 会社概要 copy — drafted from a one-line brief; read it and adjust the voice
+- [ ] privacy.html / terms.html — standard APPI-style boilerplate, not legal advice;
+      have a Japanese lawyer or 行政書士 review before relying on them
 - [ ] The form is now the **only** way to reach the company — no phone, no email, no
       social. Test a real submission end to end after deploying the Worker, and check
       it arrives in #targetcast — not the MAN.W channel — and that someone watches it.
@@ -78,6 +80,8 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 
     .gitignore                 keeps .dev.vars / .wrangler out of the repo
     index.html                 the site
+    privacy.html               プライバシーポリシー — drafted boilerplate, have it reviewed
+    terms.html                 利用規約 — drafted boilerplate, have it reviewed
     404.html                   not-found page
     worker/enquiry-relay.js    Cloudflare Worker — form → Rocket.Chat
     worker/wrangler.toml       Worker config
