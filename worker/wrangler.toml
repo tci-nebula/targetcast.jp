@@ -2,9 +2,10 @@ name = "targetcast-enquiry-relay"
 main = "enquiry-relay.js"
 compatibility_date = "2026-08-28"
 
-[vars]
-# Enquiries post here. Must NOT be the MAN.W channel.
-CHANNEL = "#targetcast"
+# The destination channel is decided solely by the webhook integration binding
+# in Rocket.Chat (must be #targetcast, never MAN.W). The server rejects any
+# payload that names a channel, so there is no CHANNEL var — a re-pointed
+# webhook fails loudly instead of posting somewhere unexpected.
 
 # Custom domain needs the targetcast.jp zone active on Cloudflare, which is
 # blocked on the registrar pushing the NS change to JPRS. Until then the worker

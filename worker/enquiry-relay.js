@@ -11,9 +11,11 @@
  * CHANNEL
  * Enquiries land in #targetcast, never in the MAN.W channel. Create a *separate*
  * incoming-webhook integration in Rocket.Chat bound to #targetcast and use that
- * URL here — do not reuse the MAN.W webhook. The channel is also set explicitly
- * in the payload below as a second guard, but the webhook binding is what really
- * decides where a message lands, so get that right first.
+ * URL here — do not reuse the MAN.W webhook. The payload deliberately carries no
+ * `channel` field: this server rejects any payload that names a channel
+ * ("overriding destination channel is disabled"), so the webhook binding alone
+ * decides where a message lands — and a re-pointed webhook fails loudly instead
+ * of posting somewhere unexpected.
  *
  * Optional binding: RATE (a KV namespace) enables the per-IP limit below.
  */
@@ -24,9 +26,6 @@ const ALLOWED_ORIGINS = [
 ];
 
 const MAX_LEN = { name: 120, company: 160, email: 200, message: 4000 };
-
-// Override with the CHANNEL var in wrangler.toml if the channel is ever renamed.
-const DEFAULT_CHANNEL = "#targetcast";
 
 function cors(origin) {
   const allow = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
@@ -90,8 +89,6 @@ export default {
       return json({ error: "Invalid email" }, 400, origin);
     }
 
-    const channel = env.CHANNEL || DEFAULT_CHANNEL;
-
     const text = [
       "*targetcast.jp — お問い合わせ*",
       `*Name:* ${name}`,
@@ -107,7 +104,6 @@ export default {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        channel,
         text,
         alias: "targetcast.jp",
         emoji: ":envelope:",
@@ -115,7 +111,7 @@ export default {
     });
 
     if (!res.ok) {
-      console.error("Rocket.Chat relay failed", channel, res.status, await res.text());
+      console.error("Rocket.Chat relay failed", res.status, await res.text());
       return json({ error: "Delivery failed" }, 502, origin);
     }
 
