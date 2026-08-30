@@ -411,7 +411,7 @@
   // Endpoint that relays to Rocket.Chat. Point this at a small proxy (a Cloudflare
   // Worker holding the incoming-webhook URL as a secret) rather than at the
   // Rocket.Chat webhook itself — anything in this file is public.
-  var ENDPOINT = "https://forms.targetcast.jp/enquiry";
+  var ENDPOINT = "https://targetcast-enquiry-relay.nick-kovac.workers.dev/enquiry";
 
   var form = document.getElementById("enquiry");
   var btn = document.getElementById("send");
