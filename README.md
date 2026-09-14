@@ -83,6 +83,8 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
     privacy.html               プライバシーポリシー — drafted boilerplate, have it reviewed
     terms.html                 利用規約 — drafted boilerplate, have it reviewed
     404.html                   not-found page
+    favicon.svg / favicon.ico  site icon — gold seal on pine, from the footer mark
+    apple-touch-icon.png       180×180 home-screen icon
     worker/enquiry-relay.js    Cloudflare Worker — form → Rocket.Chat
     worker/wrangler.toml       Worker config
     CNAME          custom domain for GitHub Pages
