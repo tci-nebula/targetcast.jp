@@ -73,7 +73,8 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
 - [ ] Rocket.Chat webhook set as a Worker secret, Worker deployed
 - [ ] `forms.targetcast.jp` DNS record pointing at the Worker
 - [ ] Decide whether Paper Flow stays on the public site
-- [ ] `assets/card.jpg` (1280×800) for the og:image, then add the meta tag
+- [x] `assets/card.jpg` (1200×630, the size social networks crop to) for the og:image,
+      meta tags added
 - [ ] 沿革 section removed for now — restore when there's history to show
 
 ## Files
@@ -85,6 +86,7 @@ and optionally rate-limits per IP if you bind a KV namespace (see `wrangler.toml
     404.html                   not-found page
     favicon.svg / favicon.ico  site icon — gold seal on pine, from the footer mark
     apple-touch-icon.png       180×180 home-screen icon
+    assets/card.jpg            1200×630 social sharing image (og:image)
     worker/enquiry-relay.js    Cloudflare Worker — form → Rocket.Chat
     worker/wrangler.toml       Worker config
     CNAME          custom domain for GitHub Pages
